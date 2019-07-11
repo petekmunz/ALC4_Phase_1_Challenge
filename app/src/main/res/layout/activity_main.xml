@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/alc_4_phase_1"
+            android:textSize="20sp"
+            android:fontFamily="@font/acme_regular"
+            style="?attr/actionBarTabTextStyle"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_alc_4_0"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/cardview_compat_inset_shadow"
+        android:fontFamily="@font/acme_regular"
+        android:textSize="35sp"
+        android:textColor="@color/colorPrimaryText"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAbout"
+        android:layout_above="@id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/about_alc"
+        android:textColor="@color/colorPrimaryText"
+        android:fontFamily="@font/acme_regular"
+        app:backgroundTint="@color/colorAccent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProfile"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_profile"
+        android:textColor="@color/colorPrimaryText"
+        android:fontFamily="@font/acme_regular"
+        android:layout_centerInParent="true"
+        app:backgroundTint="@color/colorAccent"/>
+</RelativeLayout>
+</layout>
