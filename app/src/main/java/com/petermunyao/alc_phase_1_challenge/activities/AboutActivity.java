@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(mAboutBinding.toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        mAboutBinding.webView.setWebViewClient(mAboutActivityViewModel.getWebClient());
+        mAboutBinding.webView.setWebViewClient(mAboutActivityViewModel.getWebViewClient(AboutActivity.this));
         mAboutBinding.webView.loadUrl(mAboutActivityViewModel.getUrl());
         mAboutActivityViewModel.getWebSettings(mAboutBinding.webView).setJavaScriptEnabled(true);
     }

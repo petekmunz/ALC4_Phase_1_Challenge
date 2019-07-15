@@ -1,194 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.ProfileActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:navigationIcon="@drawable/ic_arrow_back">
+        android:layout_height="match_parent"
+        android:background="#DFDEDE"
+        tools:context=".activities.ProfileActivity">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/my_profile"
-            android:textSize="20sp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/ic_arrow_back">
+
+            <TextView
+                style="?attr/actionBarTabTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/acme_regular"
+                android:text="@string/my_profile"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/imgPortrait"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/profile_image" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/underLine"
+            android:layout_marginBottom="2dp"
             android:fontFamily="@font/acme_regular"
-            style="?attr/actionBarTabTextStyle"
-            android:textColor="@color/colorWhite"/>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <ImageView
-        android:id="@+id/imgPortrait"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/toolbar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/profile_image" />
-
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:layout_below="@id/imgPortrait"
-        android:fontFamily="@font/acme_regular"
-        android:textSize="30sp"
-        android:gravity="center_horizontal" />
-    <View
-        android:id="@+id/underLine"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_below="@id/txtName"
-        android:background="@color/colorPrimaryText"/>
-    
-    <LinearLayout
-        android:id="@+id/lytTrack"
-        android:layout_below="@id/underLine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:padding="6dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/track_linear"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"
-            android:paddingStart="6dp"
-            android:paddingEnd="4dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/android"
-            android:gravity="start"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lytCountry"
-        android:layout_below="@id/lytTrack"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:padding="4dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/country"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/kenya"
-            android:gravity="start"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lytEmail"
-        android:layout_below="@id/lytCountry"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:padding="4dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/email"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="@string/personal_email"
             android:gravity="center_horizontal"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"/>
-    </LinearLayout>
+            android:text="@string/name"
+            android:textSize="30sp" />
 
-    <LinearLayout
-        android:id="@+id/lytNumber"
-        android:layout_below="@id/lytEmail"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:padding="4dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/phone_number"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/actual_phone_number"
-            android:gravity="start"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"/>
-    </LinearLayout>
+        <View
+            android:id="@+id/underLine"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_above="@id/cardTrack"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimaryText" />
 
-    <LinearLayout
-        android:id="@+id/lytSlack"
-        android:layout_below="@id/lytNumber"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:padding="4dp">
-        <TextView
-            android:layout_width="0dp"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTrack"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/slack"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/john_d"
-            android:gravity="start"
-            android:textSize="25sp"
-            android:fontFamily="@font/acme_regular"/>
-    </LinearLayout>
+            android:layout_above="@id/cardCountry"
+            android:layout_marginBottom="4dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
 
-</RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="4dp"
+                    android:text="@string/track_linear"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:gravity="end"
+                    android:text="@string/android"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cardEmail"
+            android:layout_marginBottom="4dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="@string/country"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:gravity="end"
+                    android:text="@string/kenya"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cardNumber"
+            android:layout_marginBottom="4dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme_regular"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="@string/email"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/acme_regular"
+                    android:gravity="end"
+                    android:text="@string/personal_email"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cardSlack"
+            android:layout_marginBottom="4dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="@string/phone_number"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:gravity="end"
+                    android:text="@string/actual_phone_number"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="@string/slack"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/acme_regular"
+                    android:gravity="end"
+                    android:text="@string/john_d"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
 </layout>

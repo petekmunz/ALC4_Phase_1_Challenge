@@ -30,12 +30,6 @@
             android:layout_height="match_parent"
             android:layout_below="@id/toolbar">
 
-            <View
-                android:id="@+id/viewHelper"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_centerInParent="true" />
-
             <TextView
                 android:id="@+id/txtWelcome"
                 android:layout_width="match_parent"
@@ -46,6 +40,12 @@
                 android:text="@string/welcome_to_alc_4_0"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="35sp" />
+
+            <View
+                android:id="@+id/viewHelper"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAbout"
